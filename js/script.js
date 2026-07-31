@@ -11,6 +11,54 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* ---------- Theme switcher ---------- */
+  const THEME_KEY = 'site-theme';
+  const themeToggle = document.getElementById('themeToggle');
+  const themePanel = document.getElementById('themePanel');
+  const themeSwitcher = document.getElementById('themeSwitcher');
+  const themeSwatches = document.querySelectorAll('.theme-swatch');
+
+  function applyTheme(name) {
+    const t = window.SITE_THEMES[name];
+    if (!t) return;
+    const r = document.documentElement.style;
+    r.setProperty('--primary', t.primary);
+    r.setProperty('--primary-dark', t.primaryDark);
+    r.setProperty('--primary-light', t.primaryLight);
+    r.setProperty('--primary-rgb', t.primaryRgb);
+    r.setProperty('--accent-1', t.accent1);
+    r.setProperty('--accent-2', t.accent2);
+    r.setProperty('--blob-1', t.blob1);
+    r.setProperty('--blob-2', t.blob2);
+    r.setProperty('--blob-3', t.blob3);
+
+    themeSwatches.forEach(sw => sw.classList.toggle('active', sw.getAttribute('data-theme') === name));
+  }
+
+  const savedTheme = localStorage.getItem(THEME_KEY) || 'teal';
+  applyTheme(savedTheme);
+
+  themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    themePanel.classList.toggle('open');
+  });
+
+  themeSwatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      const name = swatch.getAttribute('data-theme');
+      applyTheme(name);
+      localStorage.setItem(THEME_KEY, name);
+      themeToggle.classList.remove('spin');
+      void themeToggle.offsetWidth;
+      themeToggle.classList.add('spin');
+      themePanel.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!themeSwitcher.contains(e.target)) themePanel.classList.remove('open');
+  });
+
   /* ---------- Custom cursor ---------- */
   const cursorDot = document.getElementById('cursorDot');
   const cursorRing = document.getElementById('cursorRing');

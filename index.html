@@ -11,14 +11,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
+<script>
+  window.SITE_THEMES = {
+    teal:    { primary:'#0D9488', primaryDark:'#0F766E', primaryLight:'#5EEAD4', primaryRgb:'13,148,136', accent1:'#0D9488', accent2:'#06B6D4', blob1:'#99F6E4', blob2:'#A5F3FC', blob3:'#67E8F9' },
+    indigo:  { primary:'#4F46E5', primaryDark:'#3730A3', primaryLight:'#818CF8', primaryRgb:'79,70,229',  accent1:'#4F46E5', accent2:'#7C3AED', blob1:'#A5B4FC', blob2:'#DDD6FE', blob3:'#C7D2FE' },
+    emerald: { primary:'#059669', primaryDark:'#047857', primaryLight:'#6EE7B7', primaryRgb:'5,150,105',  accent1:'#059669', accent2:'#10B981', blob1:'#A7F3D0', blob2:'#BBF7D0', blob3:'#6EE7B7' },
+    olive:   { primary:'#556B2F', primaryDark:'#3F4F22', primaryLight:'#A9BA75', primaryRgb:'85,107,47',  accent1:'#556B2F', accent2:'#8F9F55', blob1:'#D9E4B0', blob2:'#C8D6A0', blob3:'#E3ECC2' },
+    amber:   { primary:'#EA580C', primaryDark:'#C2410C', primaryLight:'#FDBA74', primaryRgb:'234,88,12',  accent1:'#EA580C', accent2:'#F59E0B', blob1:'#FED7AA', blob2:'#FDE68A', blob3:'#FCD34D' },
+    ocean:   { primary:'#2563EB', primaryDark:'#1D4ED8', primaryLight:'#93C5FD', primaryRgb:'37,99,235',  accent1:'#2563EB', accent2:'#0EA5E9', blob1:'#BFDBFE', blob2:'#BAE6FD', blob3:'#93C5FD' }
+  };
+  (function () {
+    try {
+      var saved = localStorage.getItem('site-theme');
+      var t = window.SITE_THEMES[saved];
+      if (!t) return;
+      var r = document.documentElement.style;
+      r.setProperty('--primary', t.primary);
+      r.setProperty('--primary-dark', t.primaryDark);
+      r.setProperty('--primary-light', t.primaryLight);
+      r.setProperty('--primary-rgb', t.primaryRgb);
+      r.setProperty('--accent-1', t.accent1);
+      r.setProperty('--accent-2', t.accent2);
+      r.setProperty('--blob-1', t.blob1);
+      r.setProperty('--blob-2', t.blob2);
+      r.setProperty('--blob-3', t.blob3);
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0D9488"/>
-      <stop offset="100%" stop-color="#06B6D4"/>
+      <stop offset="0%" class="ring-stop-1"/>
+      <stop offset="100%" class="ring-stop-2"/>
     </linearGradient>
   </defs>
 </svg>
@@ -562,6 +589,24 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
   <i class="fa-solid fa-arrow-up"></i>
 </button>
+
+<!-- Theme Switcher -->
+<div class="theme-switcher" id="themeSwitcher">
+  <button class="theme-toggle" id="themeToggle" aria-label="Choose accent color">
+    <i class="fa-solid fa-palette"></i>
+  </button>
+  <div class="theme-panel" id="themePanel">
+    <span class="theme-panel-title">Pick a color</span>
+    <div class="theme-swatches">
+      <button class="theme-swatch active" data-theme="teal" style="--sw1:#0D9488; --sw2:#06B6D4;" aria-label="Teal &amp; Cyan"></button>
+      <button class="theme-swatch" data-theme="indigo" style="--sw1:#4F46E5; --sw2:#7C3AED;" aria-label="Indigo &amp; Violet"></button>
+      <button class="theme-swatch" data-theme="emerald" style="--sw1:#059669; --sw2:#10B981;" aria-label="Emerald Green"></button>
+      <button class="theme-swatch" data-theme="olive" style="--sw1:#556B2F; --sw2:#8F9F55;" aria-label="Olive Green"></button>
+      <button class="theme-swatch" data-theme="amber" style="--sw1:#EA580C; --sw2:#F59E0B;" aria-label="Amber &amp; Orange"></button>
+      <button class="theme-swatch" data-theme="ocean" style="--sw1:#2563EB; --sw2:#0EA5E9;" aria-label="Ocean Blue"></button>
+    </div>
+  </div>
+</div>
 
 <script src="js/script.js"></script>
 </body>
