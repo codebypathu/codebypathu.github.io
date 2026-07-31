@@ -338,17 +338,20 @@ section { position: relative; padding: 120px 0; }
   content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.35s ease;
   background: linear-gradient(135deg, var(--c1), var(--c2));
 }
-.tool-badge i {
+.tool-badge i, .tool-badge .tool-icon-text {
   font-size: 1.7rem; z-index: 1; transition: var(--transition);
   background: linear-gradient(135deg, var(--c1), var(--c2));
   -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tool-badge .tool-icon-text {
+  font-family: 'Poppins', sans-serif; font-weight: 800; line-height: 1;
 }
 .tool-badge span { z-index: 1; transition: color 0.3s ease; }
 .tool-badge:hover {
   transform: translateY(-8px) scale(1.03); box-shadow: var(--shadow-lg); border-color: transparent;
 }
 .tool-badge:hover::before { opacity: 1; }
-.tool-badge:hover i {
+.tool-badge:hover i, .tool-badge:hover .tool-icon-text {
   background: none; -webkit-text-fill-color: initial; color: #fff; transform: scale(1.15) rotate(-6deg);
 }
 .tool-badge:hover span { color: #fff; }
