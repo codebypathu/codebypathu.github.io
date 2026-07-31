@@ -13,14 +13,12 @@
 <link rel="stylesheet" href="css/style.css">
 <script>
   window.SITE_THEMES = {
-    teal:     { primary:'#0D9488', primaryDark:'#0F766E', primaryLight:'#5EEAD4', primaryRgb:'13,148,136',  accent1:'#0D9488', accent2:'#06B6D4', blob1:'#99F6E4', blob2:'#A5F3FC', blob3:'#67E8F9' },
-    sage:     { primary:'#8FA28A', primaryDark:'#4D5D48', primaryLight:'#C8D4C4', primaryRgb:'143,162,138', accent1:'#8FA28A', accent2:'#8AA28B', blob1:'#D8E7D5', blob2:'#CEE0CC', blob3:'#E3ECDF' },
-    navy:     { primary:'#0A2947', primaryDark:'#041728', primaryLight:'#3E8EDA', primaryRgb:'10,41,71',    accent1:'#0A2947', accent2:'#0A1947', blob1:'#CCDEF0', blob2:'#C2D2EA', blob3:'#DAE9F1' },
-    slate:    { primary:'#767F9E', primaryDark:'#3E445A', primaryLight:'#C4C8D4', primaryRgb:'118,127,158', accent1:'#767F9E', accent2:'#78769E', blob1:'#D5D9E7', blob2:'#CCCEE0', blob3:'#DFE4EC' },
-    plum:     { primary:'#744577', primaryDark:'#412543', primaryLight:'#B890BB', primaryRgb:'116,69,119',  accent1:'#744577', accent2:'#77456D', blob1:'#E6D5E7', blob2:'#E0CCDF', blob3:'#E9DFEC' },
-    steel:    { primary:'#547A95', primaryDark:'#2D4353', primaryLight:'#ABBFCD', primaryRgb:'84,122,149',  accent1:'#547A95', accent2:'#546895', blob1:'#D5DFE7', blob2:'#CCD5E0', blob3:'#DFE8EC' },
-    charcoal: { primary:'#464858', primaryDark:'#262731', primaryLight:'#878AA6', primaryRgb:'70,72,88',    accent1:'#464858', accent2:'#494658', blob1:'#D5D7E7', blob2:'#CCCCE0', blob3:'#DFE2EC' },
-    olive:    { primary:'#8A8635', primaryDark:'#4E4B1B', primaryLight:'#CAC784', primaryRgb:'138,134,53',  accent1:'#8A8635', accent2:'#778A35', blob1:'#EDEBCF', blob2:'#E4E7C6', blob3:'#EFECDC' }
+    teal:    { primary:'#0D9488', primaryDark:'#0F766E', primaryLight:'#5EEAD4', primaryRgb:'13,148,136', accent1:'#0D9488', accent2:'#06B6D4', blob1:'#99F6E4', blob2:'#A5F3FC', blob3:'#67E8F9' },
+    indigo:  { primary:'#4F46E5', primaryDark:'#3730A3', primaryLight:'#818CF8', primaryRgb:'79,70,229',  accent1:'#4F46E5', accent2:'#7C3AED', blob1:'#A5B4FC', blob2:'#DDD6FE', blob3:'#C7D2FE' },
+    emerald: { primary:'#059669', primaryDark:'#047857', primaryLight:'#6EE7B7', primaryRgb:'5,150,105',  accent1:'#059669', accent2:'#10B981', blob1:'#A7F3D0', blob2:'#BBF7D0', blob3:'#6EE7B7' },
+    olive:   { primary:'#556B2F', primaryDark:'#3F4F22', primaryLight:'#A9BA75', primaryRgb:'85,107,47',  accent1:'#556B2F', accent2:'#8F9F55', blob1:'#D9E4B0', blob2:'#C8D6A0', blob3:'#E3ECC2' },
+    amber:   { primary:'#EA580C', primaryDark:'#C2410C', primaryLight:'#FDBA74', primaryRgb:'234,88,12',  accent1:'#EA580C', accent2:'#F59E0B', blob1:'#FED7AA', blob2:'#FDE68A', blob3:'#FCD34D' },
+    ocean:   { primary:'#2563EB', primaryDark:'#1D4ED8', primaryLight:'#93C5FD', primaryRgb:'37,99,235',  accent1:'#2563EB', accent2:'#0EA5E9', blob1:'#BFDBFE', blob2:'#BAE6FD', blob3:'#93C5FD' }
   };
   (function () {
     try {
@@ -601,13 +599,11 @@
     <span class="theme-panel-title">Pick a color</span>
     <div class="theme-swatches">
       <button class="theme-swatch active" data-theme="teal" style="--sw1:#0D9488; --sw2:#06B6D4;" aria-label="Teal &amp; Cyan"></button>
-      <button class="theme-swatch" data-theme="sage" style="--sw1:#8FA28A; --sw2:#8AA28B;" aria-label="Sage Green"></button>
-      <button class="theme-swatch" data-theme="navy" style="--sw1:#0A2947; --sw2:#0A1947;" aria-label="Navy Blue"></button>
-      <button class="theme-swatch" data-theme="slate" style="--sw1:#767F9E; --sw2:#78769E;" aria-label="Slate"></button>
-      <button class="theme-swatch" data-theme="plum" style="--sw1:#744577; --sw2:#77456D;" aria-label="Plum"></button>
-      <button class="theme-swatch" data-theme="steel" style="--sw1:#547A95; --sw2:#546895;" aria-label="Steel Blue"></button>
-      <button class="theme-swatch" data-theme="charcoal" style="--sw1:#464858; --sw2:#494658;" aria-label="Charcoal"></button>
-      <button class="theme-swatch" data-theme="olive" style="--sw1:#8A8635; --sw2:#778A35;" aria-label="Olive Mustard"></button>
+      <button class="theme-swatch" data-theme="indigo" style="--sw1:#4F46E5; --sw2:#7C3AED;" aria-label="Indigo &amp; Violet"></button>
+      <button class="theme-swatch" data-theme="emerald" style="--sw1:#059669; --sw2:#10B981;" aria-label="Emerald Green"></button>
+      <button class="theme-swatch" data-theme="olive" style="--sw1:#556B2F; --sw2:#8F9F55;" aria-label="Olive Green"></button>
+      <button class="theme-swatch" data-theme="amber" style="--sw1:#EA580C; --sw2:#F59E0B;" aria-label="Amber &amp; Orange"></button>
+      <button class="theme-swatch" data-theme="ocean" style="--sw1:#2563EB; --sw2:#0EA5E9;" aria-label="Ocean Blue"></button>
     </div>
   </div>
 </div>
