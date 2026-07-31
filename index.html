@@ -14,6 +14,15 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+</svg>
+
 <!-- Preloader -->
 <div class="preloader" id="preloader">
   <div class="preloader-logo">PS</div>
@@ -156,74 +165,113 @@
       A blend of development platforms and design software gathered over 9 years in the field.
     </p>
 
-    <div class="skills-grid">
-      <div class="skill-col" data-aos="fade-up">
-        <h3><i class="fa-solid fa-code"></i> Development</h3>
-
-        <div class="skill-bar">
-          <div class="skill-bar-top"><span>Shopify (Liquid, Theme Dev)</span><span class="skill-percent">95%</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+    <div class="skill-rings">
+      <div class="ring-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-track" cx="60" cy="60" r="54"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="54" data-percent="95"></circle>
+          </svg>
+          <div class="ring-icon"><i class="fa-brands fa-shopify"></i></div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-bar-top"><span>WordPress</span><span class="skill-percent">90%</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-top"><span>Elementor / Divi / Page Builders</span><span class="skill-percent">92%</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-top"><span>HTML5, CSS3 &amp; JavaScript</span><span class="skill-percent">95%</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-top"><span>Framer</span><span class="skill-percent">85%</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-top"><span>Webflow</span><span class="skill-percent">85%</span></div>
-          <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
-        </div>
+        <h4>Shopify</h4>
+        <span class="ring-percent">95%</span>
       </div>
 
-      <div class="skill-col" data-aos="fade-up" data-aos-delay="150">
-        <h3><i class="fa-solid fa-palette"></i> Design</h3>
-
-        <div class="tools-grid">
-          <div class="tool-card">
-            <i class="fa-brands fa-figma"></i>
-            <span>Figma</span>
-          </div>
-          <div class="tool-card">
-            <i class="fa-solid fa-pen-nib"></i>
-            <span>Adobe XD</span>
-          </div>
-          <div class="tool-card">
-            <i class="fa-brands fa-adobe"></i>
-            <span>Photoshop</span>
-          </div>
-          <div class="tool-card">
-            <i class="fa-solid fa-vector-square"></i>
-            <span>Illustrator</span>
-          </div>
-          <div class="tool-card">
-            <i class="fa-solid fa-swatchbook"></i>
-            <span>CorelDRAW</span>
-          </div>
-          <div class="tool-card">
-            <i class="fa-solid fa-images"></i>
-            <span>Canva</span>
-          </div>
+      <div class="ring-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-track" cx="60" cy="60" r="54"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="54" data-percent="90"></circle>
+          </svg>
+          <div class="ring-icon"><i class="fa-brands fa-wordpress"></i></div>
         </div>
+        <h4>WordPress</h4>
+        <span class="ring-percent">90%</span>
+      </div>
 
-        <h3 class="mt">
-          <i class="fa-solid fa-layer-group"></i> Platforms
-        </h3>
-        <div class="tools-grid">
-          <div class="tool-card"><i class="fa-brands fa-shopify"></i><span>Shopify</span></div>
-          <div class="tool-card"><i class="fa-brands fa-wordpress"></i><span>WordPress</span></div>
-          <div class="tool-card"><i class="fa-solid fa-bolt"></i><span>Framer</span></div>
-          <div class="tool-card"><i class="fa-solid fa-w"></i><span>Webflow</span></div>
+      <div class="ring-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-track" cx="60" cy="60" r="54"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="54" data-percent="92"></circle>
+          </svg>
+          <div class="ring-icon"><i class="fa-solid fa-layer-group"></i></div>
+        </div>
+        <h4>Elementor / Divi</h4>
+        <span class="ring-percent">92%</span>
+      </div>
+
+      <div class="ring-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-track" cx="60" cy="60" r="54"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="54" data-percent="95"></circle>
+          </svg>
+          <div class="ring-icon"><i class="fa-solid fa-code"></i></div>
+        </div>
+        <h4>HTML/CSS/JS</h4>
+        <span class="ring-percent">95%</span>
+      </div>
+
+      <div class="ring-card" data-aos="fade-up" data-aos-delay="320">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-track" cx="60" cy="60" r="54"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="54" data-percent="85"></circle>
+          </svg>
+          <div class="ring-icon"><i class="fa-solid fa-bolt"></i></div>
+        </div>
+        <h4>Framer</h4>
+        <span class="ring-percent">85%</span>
+      </div>
+
+      <div class="ring-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-track" cx="60" cy="60" r="54"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="54" data-percent="85"></circle>
+          </svg>
+          <div class="ring-icon"><i class="fa-solid fa-w"></i></div>
+        </div>
+        <h4>Webflow</h4>
+        <span class="ring-percent">85%</span>
+      </div>
+    </div>
+
+    <div class="tools-showcase">
+      <h3 class="tools-heading" data-aos="fade-up"><i class="fa-solid fa-toolbox"></i> Design &amp; Platform Tools</h3>
+
+      <div class="tools-grid-full">
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="0" style="--c1:#A259FF; --c2:#1ABCFE;">
+          <i class="fa-brands fa-figma"></i><span>Figma</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="50" style="--c1:#FF61F6; --c2:#7B1FA2;">
+          <i class="fa-solid fa-pen-nib"></i><span>Adobe XD</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="100" style="--c1:#31A8FF; --c2:#0038A8;">
+          <i class="fa-brands fa-adobe"></i><span>Photoshop</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="150" style="--c1:#FF9A00; --c2:#B35C00;">
+          <i class="fa-solid fa-vector-square"></i><span>Illustrator</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="200" style="--c1:#00A651; --c2:#0072BC;">
+          <i class="fa-solid fa-swatchbook"></i><span>CorelDRAW</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="250" style="--c1:#00C4CC; --c2:#7D2AE8;">
+          <i class="fa-solid fa-images"></i><span>Canva</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="300" style="--c1:#95BF47; --c2:#3E5F29;">
+          <i class="fa-brands fa-shopify"></i><span>Shopify</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="350" style="--c1:#21759B; --c2:#00415B;">
+          <i class="fa-brands fa-wordpress"></i><span>WordPress</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="400" style="--c1:#0099FF; --c2:#0F1115;">
+          <i class="fa-solid fa-bolt"></i><span>Framer</span>
+        </div>
+        <div class="tool-badge" data-aos="fade-up" data-aos-delay="450" style="--c1:#146EF5; --c2:#0C4FB3;">
+          <i class="fa-solid fa-w"></i><span>Webflow</span>
         </div>
       </div>
     </div>

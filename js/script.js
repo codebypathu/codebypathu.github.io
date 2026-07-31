@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     animateRing();
 
-    document.querySelectorAll('a, button, .portfolio-card, .service-card, .tool-card').forEach(el => {
+    document.querySelectorAll('a, button, .portfolio-card, .service-card, .tool-badge, .ring-card').forEach(el => {
       el.addEventListener('mouseenter', () => cursorRing.classList.add('grow'));
       el.addEventListener('mouseleave', () => cursorRing.classList.remove('grow'));
     });
@@ -167,19 +167,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   counters.forEach(el => counterObserver.observe(el));
 
-  /* ---------- Skill bar fill ---------- */
-  const skillFills = document.querySelectorAll('.skill-fill');
+  /* ---------- Skill ring fill ---------- */
+  const RING_CIRCUMFERENCE = 339.292;
+  const skillRings = document.querySelectorAll('.ring-fill');
   const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        el.style.width = el.getAttribute('data-width') + '%';
+        const percent = Number(el.getAttribute('data-percent'));
+        const offset = RING_CIRCUMFERENCE * (1 - percent / 100);
+        requestAnimationFrame(() => { el.style.strokeDashoffset = offset; });
         skillObserver.unobserve(el);
       }
     });
   }, { threshold: 0.3 });
 
-  skillFills.forEach(el => skillObserver.observe(el));
+  skillRings.forEach(el => skillObserver.observe(el));
 
   /* ---------- Portfolio filter ---------- */
   const filterBtns = document.querySelectorAll('.filter-btn');
