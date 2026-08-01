@@ -366,7 +366,6 @@ section { position: relative; padding: 120px 0; }
 .tool-badge:hover span { color: #fff; }
 
 /* ---------- Services ---------- */
-.services { background: var(--bg-alt); }
 .services-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 20px;
 }
@@ -393,7 +392,32 @@ section { position: relative; padding: 120px 0; }
 .service-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; transition: color 0.3s ease; }
 .service-card:hover h3, .service-card:hover p { color: #fff; }
 
+/* ---------- Process ---------- */
+.process { background: var(--bg-alt); }
+.process-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 20px;
+}
+.process-step {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 36px 26px; text-align: center; transition: var(--transition);
+}
+.process-step:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: transparent; }
+.process-number {
+  display: inline-block; font-family: 'Poppins', sans-serif; font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 1px; color: var(--primary); background: rgba(var(--primary-rgb), 0.08);
+  border-radius: 20px; padding: 4px 14px; margin-bottom: 18px;
+}
+.process-icon {
+  width: 60px; height: 60px; border-radius: 50%; background: var(--gradient); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+  margin: 0 auto 18px; transition: var(--transition);
+}
+.process-step:hover .process-icon { transform: scale(1.1) rotate(-6deg); }
+.process-step h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.process-step p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+
 /* ---------- Experience Timeline ---------- */
+.experience { background: var(--bg-alt); }
 .timeline { position: relative; max-width: 800px; margin: 20px auto 0; }
 .timeline::before {
   content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
@@ -557,15 +581,16 @@ section { position: relative; padding: 120px 0; }
 @media (max-width: 992px) {
   .about-grid { grid-template-columns: 1fr; gap: 50px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
   .skill-rings { grid-template-columns: repeat(3, 1fr); }
   .tools-grid-full { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* Desktop nav needs ~870px to fit all 7 links + logo + CTA without crowding,
+/* Desktop nav needs ~950px to fit all 8 links + logo + CTA without crowding,
    so the hamburger switch-over happens earlier than the general content breakpoint. */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .nav-links {
     position: fixed; top: 0; right: -100%; height: 100vh; width: min(320px, 80%);
     background: #fff; flex-direction: column; justify-content: center; gap: 26px;
@@ -587,6 +612,7 @@ section { position: relative; padding: 120px 0; }
 
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .skill-rings { grid-template-columns: repeat(2, 1fr); }
